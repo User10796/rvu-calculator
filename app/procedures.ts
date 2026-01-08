@@ -23,9 +23,9 @@ export const procedureCategories: ProcedureCategory[] = [
   {
     name: 'Radiofrequency Ablation',
     procedures: [
-      { code: '64633', name: 'Cervical/Thoracic RFA 1st Joint', rvu: 3.84, bilateral: true },
+      { code: '64633', name: 'Cervical/Thoracic RFA 1st Joint', rvu: 3.84, bilateral: true, bilateralMultiplier: 1.5 },
       { code: '64634', name: 'C/T RFA Additional Joint', rvu: 1.32, bilateral: true },
-      { code: '64635', name: 'Lumbar RFA 1st Joint', rvu: 3.78, bilateral: true },
+      { code: '64635', name: 'Lumbar RFA 1st Joint', rvu: 3.78, bilateral: true, bilateralMultiplier: 1.5 },
       { code: '64636', name: 'Lumbar RFA Additional Joint', rvu: 1.16, bilateral: true },
       { code: '64625', name: 'SLB RFA', rvu: 3.39, bilateral: true },
       { code: '64624', name: 'RF of Peripheral Nerve', rvu: 2.50, bilateral: true },
@@ -34,7 +34,7 @@ export const procedureCategories: ProcedureCategory[] = [
   {
     name: 'Medial Branch Blocks',
     procedures: [
-      { code: '64490', name: 'C/T MBB 1st Level', rvu: 1.82, bilateral: true },
+      { code: '64490', name: 'C/T MBB 1st Level', rvu: 1.82, bilateral: true, bilateralMultiplier: 1.5 },
       { code: '64491', name: 'C/T MBB 2nd Level', rvu: 1.16, bilateral: true },
       { code: '64492', name: 'C/T MBB 3rd+ Level', rvu: 1.16, bilateral: true },
       { code: '64493', name: 'L/S MBB 1st Level', rvu: 1.52, bilateral: true, bilateralMultiplier: 1.5 },
@@ -69,7 +69,7 @@ export const procedureCategories: ProcedureCategory[] = [
   {
     name: 'Joint Injections',
     procedures: [
-      { code: '27096', name: 'SIJ Injection', rvu: 1.48, bilateral: true },
+      { code: '27096', name: 'SIJ Injection', rvu: 1.48, bilateral: true, bilateralMultiplier: 1.5 },
       { code: '20611', name: 'Large Joint/Bursa WITH u/s', rvu: 1.10, bilateral: true },
       { code: '20610', name: 'Large Joint/Bursa WITHOUT u/s', rvu: 0.79, bilateral: true },
       { code: '20606', name: 'Intermediate Joint WITH u/s', rvu: 0.89, bilateral: true },
