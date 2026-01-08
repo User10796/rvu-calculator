@@ -3,6 +3,7 @@ export interface Procedure {
   name: string
   rvu: number
   bilateral?: boolean // if true, shows unilateral/bilateral options
+  bilateralMultiplier?: number // multiplier for bilateral (default 2, some are 1.5)
 }
 
 export interface ProcedureCategory {
@@ -36,7 +37,7 @@ export const procedureCategories: ProcedureCategory[] = [
       { code: '64490', name: 'C/T MBB 1st Level', rvu: 1.82, bilateral: true },
       { code: '64491', name: 'C/T MBB 2nd Level', rvu: 1.16, bilateral: true },
       { code: '64492', name: 'C/T MBB 3rd+ Level', rvu: 1.16, bilateral: true },
-      { code: '64493', name: 'L/S MBB 1st Level', rvu: 1.52, bilateral: true },
+      { code: '64493', name: 'L/S MBB 1st Level', rvu: 1.52, bilateral: true, bilateralMultiplier: 1.5 },
       { code: '64494', name: 'L/S MBB 2nd Level', rvu: 1.00, bilateral: true },
       { code: '64495', name: 'L/S MBB 3rd+ Level', rvu: 1.00, bilateral: true },
       { code: '64451', name: 'SLBB', rvu: 1.52, bilateral: true },

@@ -50,8 +50,8 @@ export default function Home() {
       for (const proc of category.procedures) {
         const unilateral = getCount(proc.code, 'unilateral')
         const bilateral = getCount(proc.code, 'bilateral')
-        // Bilateral counts as 2x the RVU
-        total += proc.rvu * unilateral + proc.rvu * bilateral * 2
+        const bilateralMult = proc.bilateralMultiplier ?? 2
+        total += proc.rvu * unilateral + proc.rvu * bilateral * bilateralMult
       }
     }
     return total
@@ -64,7 +64,8 @@ export default function Home() {
   const getProcedureTotal = (proc: Procedure) => {
     const unilateral = getCount(proc.code, 'unilateral')
     const bilateral = getCount(proc.code, 'bilateral')
-    return proc.rvu * unilateral + proc.rvu * bilateral * 2
+    const bilateralMult = proc.bilateralMultiplier ?? 2
+    return proc.rvu * unilateral + proc.rvu * bilateral * bilateralMult
   }
 
   return (
@@ -115,7 +116,7 @@ export default function Home() {
                           <span className="text-sm text-gray-800 truncate">{proc.name}</span>
                         </div>
                         <div className="text-xs text-gray-500 mt-0.5">
-                          {proc.rvu} RVU {proc.bilateral && '(×2 if bilateral)'}
+                          {proc.rvu} RVU {proc.bilateral && `(×${proc.bilateralMultiplier ?? 2} if bilateral)`}
                         </div>
                       </div>
 
