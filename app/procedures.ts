@@ -28,7 +28,7 @@ export const procedureCategories: ProcedureCategory[] = [
       { code: '64635', name: 'Lumbar RFA 1st Joint', rvu: 3.78, bilateral: true, bilateralMultiplier: 1.5 },
       { code: '64636', name: 'Lumbar RFA Additional Joint', rvu: 1.16, bilateral: true },
       { code: '64625', name: 'SLB RFA', rvu: 3.39, bilateral: true },
-      { code: '64624', name: 'Genicular RFA', rvu: 2.50, bilateral: true },
+      { code: '64624', name: 'Genicular RFA', rvu: 2.50, bilateral: true, bilateralMultiplier: 1.5 },
     ],
   },
   {
@@ -41,7 +41,7 @@ export const procedureCategories: ProcedureCategory[] = [
       { code: '64494', name: 'L/S MBB 2nd Level', rvu: 1.00, bilateral: true },
       { code: '64495', name: 'L/S MBB 3rd+ Level', rvu: 1.00, bilateral: true },
       { code: '64451', name: 'SLBB', rvu: 1.52, bilateral: true },
-      { code: '64454', name: 'Genicular Nerve Block', rvu: 1.52, bilateral: true },
+      { code: '64454', name: 'Genicular Nerve Block', rvu: 1.52, bilateral: true, bilateralMultiplier: 1.5 },
     ],
   },
   {
