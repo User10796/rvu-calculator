@@ -74,39 +74,39 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-gray-50 py-6 px-4">
       <div className="max-w-4xl mx-auto">
-        <div className="flex justify-between items-center mb-6">
+        <div className="flex justify-between items-center mb-3">
           <div>
             <h1 className="text-2xl font-bold text-gray-900">wRVU Calculator</h1>
             <p className="text-gray-600 text-sm">Calculate work RVUs for daily procedures</p>
           </div>
-          <div className="flex items-center gap-3">
-            <div className="flex rounded-lg overflow-hidden border border-gray-300">
-              <button
-                onClick={() => setMode('procedure')}
-                className={`px-3 py-1.5 text-sm font-medium ${
-                  mode === 'procedure'
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-white text-gray-600 hover:bg-gray-100'
-                }`}
-              >
-                Procedure
-              </button>
-              <button
-                onClick={() => setMode('clinic')}
-                className={`px-3 py-1.5 text-sm font-medium ${
-                  mode === 'clinic'
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-white text-gray-600 hover:bg-gray-100'
-                }`}
-              >
-                Clinic
-              </button>
-            </div>
+          <button
+            onClick={clearAll}
+            className="px-4 py-2 text-sm bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300"
+          >
+            Clear All
+          </button>
+        </div>
+        <div className="flex justify-center mb-6">
+          <div className="flex rounded-lg overflow-hidden border border-gray-300">
             <button
-              onClick={clearAll}
-              className="px-4 py-2 text-sm bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300"
+              onClick={() => setMode('procedure')}
+              className={`px-4 py-1.5 text-sm font-medium ${
+                mode === 'procedure'
+                  ? 'bg-blue-600 text-white'
+                  : 'bg-white text-gray-600 hover:bg-gray-100'
+              }`}
             >
-              Clear All
+              Procedure
+            </button>
+            <button
+              onClick={() => setMode('clinic')}
+              className={`px-4 py-1.5 text-sm font-medium ${
+                mode === 'clinic'
+                  ? 'bg-blue-600 text-white'
+                  : 'bg-white text-gray-600 hover:bg-gray-100'
+              }`}
+            >
+              Clinic
             </button>
           </div>
         </div>
