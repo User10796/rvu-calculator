@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useMemo } from 'react'
-import { procedureCategories, Procedure } from './procedures'
+import { procedureCategories, clinicCategories, Procedure } from './procedures'
 
 interface ProcedureCount {
   [key: string]: {
@@ -12,6 +12,9 @@ interface ProcedureCount {
 
 export default function Home() {
   const [counts, setCounts] = useState<ProcedureCount>({})
+  const [mode, setMode] = useState<'procedure' | 'clinic'>('procedure')
+
+  const categories = mode === 'procedure' ? procedureCategories : clinicCategories
 
   const updateCount = (code: string, type: 'unilateral' | 'bilateral', delta: number) => {
     setCounts((prev) => {
@@ -46,7 +49,7 @@ export default function Home() {
 
   const totalRvu = useMemo(() => {
     let total = 0
-    for (const category of procedureCategories) {
+    for (const category of categories) {
       for (const proc of category.procedures) {
         const unilateral = getCount(proc.code, 'unilateral')
         const bilateral = getCount(proc.code, 'bilateral')
@@ -55,7 +58,7 @@ export default function Home() {
       }
     }
     return total
-  }, [counts])
+  }, [counts, categories])
 
   const clearAll = () => {
     setCounts({})
@@ -76,12 +79,36 @@ export default function Home() {
             <h1 className="text-2xl font-bold text-gray-900">wRVU Calculator</h1>
             <p className="text-gray-600 text-sm">Calculate work RVUs for daily procedures</p>
           </div>
-          <button
-            onClick={clearAll}
-            className="px-4 py-2 text-sm bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300"
-          >
-            Clear All
-          </button>
+          <div className="flex items-center gap-3">
+            <div className="flex rounded-lg overflow-hidden border border-gray-300">
+              <button
+                onClick={() => setMode('procedure')}
+                className={`px-3 py-1.5 text-sm font-medium ${
+                  mode === 'procedure'
+                    ? 'bg-blue-600 text-white'
+                    : 'bg-white text-gray-600 hover:bg-gray-100'
+                }`}
+              >
+                Procedure
+              </button>
+              <button
+                onClick={() => setMode('clinic')}
+                className={`px-3 py-1.5 text-sm font-medium ${
+                  mode === 'clinic'
+                    ? 'bg-blue-600 text-white'
+                    : 'bg-white text-gray-600 hover:bg-gray-100'
+                }`}
+              >
+                Clinic
+              </button>
+            </div>
+            <button
+              onClick={clearAll}
+              className="px-4 py-2 text-sm bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300"
+            >
+              Clear All
+            </button>
+          </div>
         </div>
 
         {/* Sticky Total */}
@@ -94,7 +121,7 @@ export default function Home() {
 
         {/* Categories */}
         <div className="space-y-6">
-          {procedureCategories.map((category) => (
+          {categories.map((category) => (
             <div key={category.name} className="bg-white rounded-lg shadow p-4">
               <h2 className="text-lg font-semibold text-gray-800 mb-3 border-b pb-2">
                 {category.name}
