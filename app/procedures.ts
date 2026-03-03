@@ -64,17 +64,8 @@ export const procedureCategories: ProcedureCategory[] = [
   {
     name: 'Peripheral Nerve Blocks',
     procedures: [
-      { code: '64615', name: 'Botox - Migraine', rvu: 1.85, bilateral: false },
-      { code: '64616', name: 'Botox - Neck', rvu: 1.53, bilateral: false },
-      { code: '64461', name: 'Paravertebral Block 1st Level', rvu: 1.75, bilateral: false },
-      { code: '64462', name: 'Paravertebral Block 2nd+ Level', rvu: 1.10, bilateral: false },
-      { code: '64450+64447', name: 'II/IH Block w/ u/s', rvu: 1.85, bilateral: true },
-      { code: '64420', name: 'ICNB 1st Level', rvu: 1.08, bilateral: false },
-      { code: '64421', name: 'ICNB 2nd+ Level', rvu: 0.55, bilateral: false },
-      { code: '64418', name: 'Suprascapular Nerve Block', rvu: 1.10, bilateral: true },
       { code: '64450', name: 'Peripheral Nerve Block', rvu: 0.75, bilateral: false },
-      { code: '64405', name: 'Greater Occipital Nerve Block', rvu: 0.94, bilateral: true },
-      { code: '64505', name: 'SPG Block', rvu: 0.75, bilateral: false },
+      { code: '64418', name: 'Suprascapular Nerve Block', rvu: 1.10, bilateral: true },
     ],
   },
   {
@@ -166,6 +157,20 @@ export const procedureCategories: ProcedureCategory[] = [
     name: 'Ultrasound Guidance',
     procedures: [
       { code: '76942', name: 'Ultrasound Guidance', rvu: 0.67, bilateral: false },
+    ],
+  },
+  {
+    name: 'Other Nerve Blocks',
+    procedures: [
+      { code: '64615', name: 'Botox - Migraine', rvu: 1.85, bilateral: false },
+      { code: '64616', name: 'Botox - Neck', rvu: 1.53, bilateral: false },
+      { code: '64461', name: 'Paravertebral Block 1st Level', rvu: 1.75, bilateral: false },
+      { code: '64462', name: 'Paravertebral Block 2nd+ Level', rvu: 1.10, bilateral: false },
+      { code: '64450+64447', name: 'II/IH Block w/ u/s', rvu: 1.85, bilateral: true },
+      { code: '64420', name: 'ICNB 1st Level', rvu: 1.08, bilateral: false },
+      { code: '64421', name: 'ICNB 2nd+ Level', rvu: 0.55, bilateral: false },
+      { code: '64405', name: 'Greater Occipital Nerve Block', rvu: 0.94, bilateral: true },
+      { code: '64505', name: 'SPG Block', rvu: 0.75, bilateral: false },
     ],
   },
   {
