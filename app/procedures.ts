@@ -101,9 +101,22 @@ export const procedureCategories: ProcedureCategory[] = [
   {
     name: 'SCS/IPG',
     procedures: [
-      { code: '63650', name: 'Insertion or replacement of IPG', rvu: 7.15, bilateral: false },
-      { code: '63685', name: 'SCS Interrogation', rvu: 5.19, bilateral: false },
+      { code: '63650', name: 'SCS Epidural Lead Placement — 1 Lead', rvu: 7.15, bilateral: false },
+      { code: '63650 ×2', name: 'SCS Epidural Lead Placement — 2 Leads', rvu: 14.30, bilateral: false },
+      { code: '63685', name: 'IPG Insertion or Replacement', rvu: 5.19, bilateral: false },
       { code: '95972', name: 'SCS Programming', rvu: 0.80, bilateral: false },
+    ],
+  },
+  {
+    name: 'Hip Articular Branch Block',
+    procedures: [
+      { code: '64447+64450', name: 'Hip Articular Branch Block (femoral + obturator)', rvu: 1.85, bilateral: true },
+    ],
+  },
+  {
+    name: 'Hip RFA',
+    procedures: [
+      { code: '64640 ×2', name: 'Hip RFA (femoral + obturator articular branches)', rvu: 3.96, bilateral: true },
     ],
   },
   {
