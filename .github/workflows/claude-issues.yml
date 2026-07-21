@@ -1,0 +1,24 @@
+# .github/workflows/claude-issues.yml  (rvu-calc repo)
+# Mention @claude in any issue/PR comment and Claude Code fixes it in a PR.
+# One-time: install the Claude GitHub App on the repo (in Claude Code: /install-github-app)
+# and add ANTHROPIC_API_KEY as a repo secret.
+name: Claude Issue Worker
+
+on:
+  issue_comment:
+    types: [created]
+  issues:
+    types: [opened]
+
+jobs:
+  claude:
+    if: contains(github.event.comment.body || github.event.issue.body, '@claude')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+    steps:
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
