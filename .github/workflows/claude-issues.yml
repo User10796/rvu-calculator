@@ -18,6 +18,7 @@ jobs:
       contents: write
       pull-requests: write
       issues: write
+      id-token: write        # required: claude-code-action fetches an OIDC token
     steps:
       - uses: anthropics/claude-code-action@v1
         with:
